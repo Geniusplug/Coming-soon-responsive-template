@@ -1,0 +1,197 @@
+/* === Reset & Base Styles === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    font-family: 'Playfair Display', serif; /* Luxury Serif Font */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0a0a1a; /* Fallback deep color */
+    color: #ffffff;
+    position: relative;
+}
+
+/* === The "Royal RGB" Animated Background === */
+body::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    z-index: -2;
+    /* A complex, deep conic gradient combining royal blues, purples, deep reds and touches of gold */
+    background: conic-gradient(
+        from 0deg at 50% 50%,
+        #0f0c29 0deg,
+        #302b63 60deg,
+        #24243e 120deg,
+        #4a1e1e 180deg, /* Deep Red hint */
+        #24243e 240deg,
+        #302b63 300deg,
+        #0f0c29 360deg
+    );
+    animation: rotateBackground 60s linear infinite;
+    opacity: 0.8;
+}
+
+/* Adds a luxury vignette overlay */
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.8) 100%);
+}
+
+@keyframes rotateBackground {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Canvas sits between background and content */
+#luxury-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* === Main Container === */
+.container {
+    z-index: 10;
+    text-align: center;
+    padding: 2rem;
+}
+
+/* === Logo Styling & Animation === */
+.rsa-logo-container {
+    margin-bottom: 3rem;
+}
+
+.rsa-letters {
+    font-family: 'Montserrat', sans-serif; /* Geometric font matching the logo */
+    font-weight: 700;
+    font-size: 8rem;
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    /* Add a subtle luxury gradient to the text itself */
+    background: linear-gradient(to bottom right, #ffffff, #e0e0e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+}
+
+/* Matching the original logo colors */
+.r-letter { background: linear-gradient(to bottom, #e53935, #c62828); -webkit-background-clip: text; }
+.s-letter { background: linear-gradient(to bottom, #fb8c00, #ef6c00); -webkit-background-clip: text; }
+.a-letter { background: linear-gradient(to bottom, #fdd835, #fbc02d); -webkit-background-clip: text; }
+
+
+.letter {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Sequential delays for entrance */
+.r-letter { animation-delay: 0.5s; }
+.s-letter { animation-delay: 0.7s; }
+.a-letter { animation-delay: 0.9s; }
+
+
+.rsa-subtitle {
+    margin-top: 10px;
+    font-family: 'Montserrat', sans-serif;
+    color: #b0bec5; /* Muted grey/blue from original */
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeInSlow 1s ease forwards 1.4s;
+}
+
+/* === Coming Soon Content === */
+.coming-soon-container {
+    opacity: 0;
+    animation: fadeInSlow 1s ease forwards 2s;
+}
+
+.main-title {
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.sub-title {
+    font-size: 1.8rem;
+    color: #fdd835; /* Gold color */
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+/* A subtle shimmering underline */
+.divider-line {
+    height: 2px;
+    width: 60px;
+    background: linear-gradient(90deg, transparent, #fdd835, transparent);
+    margin: 0 auto 1.5rem auto;
+    animation: shimmer 3s infinite linear;
+}
+
+.notify-text {
+    font-family: 'Montserrat', sans-serif;
+    color: #bdbdbd;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+/* === Animations === */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInSlow {
+    to { opacity: 1; }
+}
+
+@keyframes shimmer {
+    0% { opacity: 0.5; width: 60px; }
+    50% { opacity: 1; width: 100px; }
+    100% { opacity: 0.5; width: 60px; }
+}
+
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+    .rsa-letters { font-size: 5rem; }
+    .rsa-subtitle { font-size: 0.9rem; gap: 0.8rem; }
+    .main-title { font-size: 1.8rem; }
+    .sub-title { font-size: 1.4rem; }
+}
