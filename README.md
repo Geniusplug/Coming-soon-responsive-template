@@ -30,3 +30,15 @@ A high-performance, aesthetically pleasing "Coming Soon" landing page designed f
 ├── style.css       # Styling, animations, and responsive design
 ├── script.js       # Physics engine for Waves and Particles
 └── README.md       # Project documentation
+
+
+👨‍💻 Author
+MD Roman Sarkar
+
+Role: Software Engineer
+
+Specialization: Java, Python, Artificial Intelligence, and Web Technologies.
+
+Project: RSA Luxury Brand Identity Animation.
+
+© 2025 MD Roman Sarkar. All Rights Reserved.
