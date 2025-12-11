@@ -32,13 +32,15 @@ A high-performance, aesthetically pleasing "Coming Soon" landing page designed f
 └── README.md       # Project documentation
 
 
-👨‍💻 Author
-MD Roman Sarkar
+## 👨‍💻 Author
 
-Role: Software Engineer
+**MD Roman Sarkar**
 
-Specialization: Java, Python, Artificial Intelligence, and Web Technologies.
+* **Role:** Software Engineer || Researcher
+* **Specialization:** Java, Python, Artificial Intelligence, and Web Technologies.
+* **Project:** RSA Luxury Brand Identity Animation.
 
-Project: RSA Luxury Brand Identity Animation.
+---
 
-© 2025 MD Roman Sarkar. All Rights Reserved.
+*© 2025 MD Roman Sarkar. All Rights Reserved.*
+
